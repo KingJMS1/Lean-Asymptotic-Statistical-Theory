@@ -47,8 +47,9 @@ variable {α : Type*} [NormedAddCommGroup α] [InnerProductSpace ℝ α]
 /-- *Gram-matrix is positive semidefinite.* For any finite family
 `v : ι → α` (with `ι` a `Fintype`) in a real inner product space, the
 Gram matrix `Gᵢⱼ = ⟪vᵢ, vⱼ⟫_ℝ` is positive semidefinite. -/
-theorem gram_posSemidef {ι : Type*} [Fintype ι] [DecidableEq ι] (v : ι → α) :
+theorem gram_posSemidef {ι} [Finite ι] (v : ι → α) :
     (Matrix.of (fun i j : ι => ⟪v i, v j⟫_ℝ)).PosSemidef := by
+  haveI : Fintype ι := Fintype.ofFinite ι
   rw [Matrix.posSemidef_iff_dotProduct_mulVec]
   refine ⟨?_, ?_⟩
   · -- Hermitian (symmetric for real entries).
@@ -201,8 +202,8 @@ theorem joint_covariance_block_posSemidef
                   (0 : Matrix (Fin 1) (Fin m) ℝ)
                   (0 : Matrix (Fin m) (Fin 1) ℝ)
                   (0 : Matrix (Fin m) (Fin m) ℝ)) i j * x j := by
-        simp [dotProduct, Matrix.mulVec, mul_comm, mul_left_comm, 
-          Pi.star_apply, 
+        simp [dotProduct, Matrix.mulVec, mul_comm, mul_left_comm,
+          Pi.star_apply,
           star_trivial]
       rw [h_dotprod_form]
       -- Compute the double sum: only the (inl 0, inl 0) term is nonzero.

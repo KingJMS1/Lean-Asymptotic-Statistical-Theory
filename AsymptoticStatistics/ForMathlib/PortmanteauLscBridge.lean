@@ -154,12 +154,12 @@ Proof outline:
 theorem liminf_avgRisk_kernel_seq_le_liminf_bayesRisk
     (π : Measure Ω)
     -- data-kernel sequence (vdV §8.5: the experiment measures, viewed as a `Kernel`).
-    (μ_n : ∀ n : ℕ, Kernel Ω 𝓨)
+    (μ_n : ℕ → Kernel Ω 𝓨)
     -- limit kernel-bind family (e.g. `h ↦ multivariateGaussian h J⁻¹`).
     (μLim : Kernel Ω 𝓨)
     -- estimator kernel, generalised to `Kernel 𝓨 Ω'` for any output type.
     {Ω' : Type*} [MeasurableSpace Ω'] [TopologicalSpace Ω'] [OpensMeasurableSpace Ω']
-    (κ_n : ∀ n : ℕ, Kernel 𝓨 Ω') (κLim : Kernel 𝓨 Ω')
+    (κ_n : ℕ → Kernel 𝓨 Ω') (κLim : Kernel 𝓨 Ω')
     -- per-`h` weak convergence (vdV §8.5: obtained via Prohorov tightness + Le Cam
     -- contiguity + diagonal subsequence).
     (h_weak : ∀ h : Ω,
