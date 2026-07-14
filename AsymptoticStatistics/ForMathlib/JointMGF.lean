@@ -33,6 +33,10 @@ Le-Cam-third + characteristic-function argument.
   `AnalyticAt` primitives and `AnalyticOnNhd.cexp`.
 -/
 
+-- Modified by John Mahlon Scott (mascottpy@gmail.com)
+-- Removed unneccary {l : Type*} [Fintype ι] [DecideableEq ι], replaced with {ι} [Finite ι]
+-- followed by a haveI indicating that Finite is Fintype
+
 open Complex Set Filter Topology Matrix
 open scoped InnerProductSpace Matrix
 

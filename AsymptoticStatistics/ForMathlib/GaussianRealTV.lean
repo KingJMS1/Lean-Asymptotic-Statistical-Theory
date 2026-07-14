@@ -31,6 +31,9 @@ many indices, so this eventual-positivity suffices and is folded silently into
 the proof.
 -/
 
+-- Modified by John Mahlon Scott (mascottpy@gmail.com)
+-- Removed unnecessary simpa and the resulting unnecessary simp rules in gaussianReal_TV_tendsto
+
 open Filter Topology MeasureTheory ProbabilityTheory Real
 open scoped ENNReal NNReal
 

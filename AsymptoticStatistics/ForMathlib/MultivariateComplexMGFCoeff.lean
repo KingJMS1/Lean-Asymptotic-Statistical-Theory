@@ -33,6 +33,9 @@ is bundled into `mgfCoeffCMM`. This avoids any Bochner integration of
 CMM-valued functions.
 -/
 
+-- Modified by John Mahlon Scott (mascottpy@gmail.com)
+-- Removed a few uses of unnecessary simp/simpa
+
 open MeasureTheory Complex Set Filter Topology Finset
 open scoped ENNReal NNReal BigOperators
 

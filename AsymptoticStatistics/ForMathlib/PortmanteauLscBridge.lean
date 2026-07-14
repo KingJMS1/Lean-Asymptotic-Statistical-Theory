@@ -25,6 +25,10 @@ Headline declarations:
 `liminf_avgRisk_kernel_seq_le_liminf_bayesRisk`.
 -/
 
+-- Modified by John Mahlon Scott (mascottpy@gmail.com)
+-- Removed unnecessary variable n in liminf_avgRisk_kernel_seq_le_liminf_bayesRisk
+-- replaced with anonymous variables
+
 open MeasureTheory ProbabilityTheory Filter Topology
 open scoped ENNReal
 
